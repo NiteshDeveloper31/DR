@@ -162,6 +162,24 @@ body.cursor-hover .custom-cursor-ring {
   white-space: nowrap;
 }
 
+.emergency-banner-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .emergency-banner-actions {
+    flex-direction: column;
+    width: 100% !important;
+  }
+  .emergency-banner-actions .btn {
+    width: 100% !important;
+    text-align: center;
+    justify-content: center;
+  }
+}
+
 .emergency-pulse {
   width: 7px;
   height: 7px;

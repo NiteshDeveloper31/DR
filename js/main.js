@@ -1,25 +1,36 @@
 /* ==========================================================================
    AAROGYA ONE - Core Main JavaScript Engine
-   Line-1 Global Mobile Menu Toggle, Real Indian Doctor Photos, 3D Tilt Cards
+   Debounced Mobile Menu Toggle (Double-Tap / Touch & Click Immune)
    ========================================================================== */
 
-// Defined at Line 1 for 100% Instant Execution from HTML onclick / ontouchstart
+// Debounce timestamp to prevent dual touchstart + click double-toggle
+let lastMobileToggleTime = 0;
+
 window.toggleMobileMenu = function(e) {
+  const now = Date.now();
+  if (now - lastMobileToggleTime < 350) {
+    if (e && e.preventDefault) e.preventDefault();
+    return;
+  }
+  lastMobileToggleTime = now;
+
   if (e) {
     if (e.preventDefault) e.preventDefault();
     if (e.stopPropagation) e.stopPropagation();
   }
+
   const drawer = document.querySelector('.mobile-drawer');
   const backdrop = document.querySelector('.drawer-backdrop');
-  if (drawer && backdrop) {
+
+  if (drawer) {
     const isActive = drawer.classList.contains('active');
     if (isActive) {
       drawer.classList.remove('active');
-      backdrop.classList.remove('active');
+      backdrop?.classList.remove('active');
       document.body.style.overflow = '';
     } else {
       drawer.classList.add('active');
-      backdrop.classList.add('active');
+      backdrop?.classList.add('active');
       document.body.style.overflow = 'hidden';
     }
   }
@@ -126,7 +137,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initPageTransitions();
 
   /* ------------------------------------------------------------------------
-   * 3. Sticky Navbar & Mobile Drawer Event Handlers
+   * 3. Sticky Navbar & Mobile Drawer Close Event Binding
    * ------------------------------------------------------------------------ */
   const header = document.querySelector('.site-header');
   window.addEventListener('scroll', () => {
@@ -137,21 +148,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  const mobileToggle = document.querySelector('.mobile-nav-toggle');
   const backdrop = document.querySelector('.drawer-backdrop');
   const drawerClose = document.querySelector('.drawer-close');
 
-  if (mobileToggle) {
-    mobileToggle.addEventListener('click', (e) => window.toggleMobileMenu(e));
-    mobileToggle.addEventListener('touchstart', (e) => window.toggleMobileMenu(e), { passive: false });
-  }
   if (backdrop) {
     backdrop.addEventListener('click', (e) => window.toggleMobileMenu(e));
-    backdrop.addEventListener('touchstart', (e) => window.toggleMobileMenu(e), { passive: false });
   }
   if (drawerClose) {
     drawerClose.addEventListener('click', (e) => window.toggleMobileMenu(e));
-    drawerClose.addEventListener('touchstart', (e) => window.toggleMobileMenu(e), { passive: false });
   }
 
   /* ------------------------------------------------------------------------
