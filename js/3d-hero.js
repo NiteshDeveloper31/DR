@@ -1,6 +1,6 @@
 /* ==========================================================================
    AAROGYA ONE - Large Prominent 3D Healthcare Core Visual Engine
-   Enlarged Translucent 3D Healthcare Orb + Spaced 3D Orbiting Badges
+   Centered Translucent 3D Healthcare Orb + Balanced 3D Orbiting Badges
    Mouse Depth Parallax, Scroll Scaling & Choreographed Entrance Sequence
    ========================================================================== */
 
@@ -53,13 +53,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Orbiting Specialty Nodes Base Data (Wide spacious orbital layout)
+  // Balanced Orbiting Specialty Nodes
   const specialties = [
-    { label: 'Cardiology', icon: '❤️', angle: 0, speed: 0.007, baseRadius: 280, yOffset: -40 },
-    { label: 'Neurology', icon: '🧠', angle: (Math.PI * 2) / 5, speed: 0.007, baseRadius: 295, yOffset: 30 },
-    { label: 'Orthopedics', icon: '🦴', angle: (Math.PI * 4) / 5, speed: 0.007, baseRadius: 270, yOffset: -50 },
-    { label: 'Dermatology', icon: '✨', angle: (Math.PI * 6) / 5, speed: 0.007, baseRadius: 290, yOffset: 45 },
-    { label: 'Pediatrics', icon: '👶', angle: (Math.PI * 8) / 5, speed: 0.007, baseRadius: 265, yOffset: 0 }
+    { label: 'Cardiology', icon: '❤️', angle: 0, speed: 0.006, baseRadius: 290, yOffset: -35 },
+    { label: 'Neurology', icon: '🧠', angle: (Math.PI * 2) / 5, speed: 0.006, baseRadius: 310, yOffset: 40 },
+    { label: 'Orthopedics', icon: '🦴', angle: (Math.PI * 4) / 5, speed: 0.006, baseRadius: 280, yOffset: -45 },
+    { label: 'Dermatology', icon: '✨', angle: (Math.PI * 6) / 5, speed: 0.006, baseRadius: 300, yOffset: 45 },
+    { label: 'Pediatrics', icon: '👶', angle: (Math.PI * 8) / 5, speed: 0.006, baseRadius: 275, yOffset: 0 }
   ];
 
   const projectedSpecialties = [];
@@ -127,11 +127,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const scrollFactor = Math.max(0.65, 1 - scrollYOffset * 0.0008);
     const scrollYShift = scrollYOffset * 0.15;
 
+    // Centered Center X and Center Y (Shifted down +45px on mobile for vertical centering)
     const centerX = width / 2;
-    const centerY = height / 2 - scrollYShift;
+    const centerY = (height / 2 + (isMobile ? 45 : 0)) - scrollYShift;
     
-    // ENLARGED ORB RADIUS (0.42 desktop, 0.38 mobile)
-    const orbRadius = Math.min(width, height) * (isMobile ? 0.38 : 0.42) * scrollFactor;
+    // ENLARGED ORB RADIUS (0.40 desktop, 0.35 mobile)
+    const orbRadius = Math.min(width, height) * (isMobile ? 0.35 : 0.40) * scrollFactor;
 
     ctx.save();
 
@@ -147,7 +148,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 2. Concentric Orbital 3D Rings
     for (let r = 1; r <= 3; r++) {
-      const ringRadius = orbRadius * (1.15 + r * 0.26);
+      const ringRadius = orbRadius * (1.2 + r * 0.28);
       const ringAngleY = mouseX * 2 + time * (0.25 / r);
 
       ctx.beginPath();
@@ -155,7 +156,7 @@ document.addEventListener('DOMContentLoaded', () => {
         centerX,
         centerY,
         ringRadius,
-        ringRadius * (isMobile ? 0.42 : 0.45),
+        ringRadius * (isMobile ? 0.45 : 0.48),
         ringAngleY,
         0,
         Math.PI * 2
@@ -167,7 +168,7 @@ document.addEventListener('DOMContentLoaded', () => {
       ctx.setLineDash([]);
     }
 
-    // 3. Main Central Translucent 3D Orb Core (Bold & Large)
+    // 3. Main Central Translucent 3D Orb Core
     const orbGrad = ctx.createRadialGradient(
       centerX - orbRadius * 0.35 + mouseX * 40,
       centerY - orbRadius * 0.35 + mouseY * 40,
@@ -194,7 +195,7 @@ document.addEventListener('DOMContentLoaded', () => {
     ctx.stroke();
     ctx.restore();
 
-    // 4. Inner 3D Heart & Pulse Motif (Enlarged)
+    // 4. Inner 3D Heart & Pulse Motif
     ctx.save();
     ctx.translate(centerX, centerY);
     const heartScale = (orbRadius / 150) * (1 + Math.sin(time * 3) * 0.05);
@@ -249,9 +250,9 @@ document.addEventListener('DOMContentLoaded', () => {
       ctx.fill();
     }
 
-    // 7. Spacious Orbiting Specialty Badges (Enlarged text & clear spacing)
+    // 7. Spacious Orbiting Specialty Badges
     projectedSpecialties.length = 0;
-    const orbitalScale = isMobile ? 0.58 : 1.0;
+    const orbitalScale = isMobile ? 0.76 : 1.0;
 
     specialties.forEach((spec, index) => {
       const currentSpeed = (hoveredSpecialtyIndex === index) ? spec.speed * 0.15 : spec.speed;
@@ -284,13 +285,13 @@ document.addEventListener('DOMContentLoaded', () => {
       ctx.shadowBlur = isHovered ? 20 : 10;
 
       const labelText = `${spec.icon} ${spec.label}`;
-      const fontSize = Math.max(12, (isMobile ? 13 : 14.5) * scale);
+      const fontSize = Math.max(11, (isMobile ? 12 : 14.5) * scale);
       ctx.font = `700 ${fontSize}px 'Plus Jakarta Sans', sans-serif`;
       const textWidth = ctx.measureText(labelText).width;
-      const padX = (isMobile ? 12 : 16) * scale;
-      const padY = (isMobile ? 7 : 9) * scale;
+      const padX = (isMobile ? 10 : 16) * scale;
+      const padY = (isMobile ? 6 : 9) * scale;
       const badgeW = textWidth + padX * 2;
-      const badgeH = (isMobile ? 24 : 28) * scale + padY;
+      const badgeH = (isMobile ? 22 : 28) * scale + padY;
 
       ctx.beginPath();
       ctx.roundRect(-badgeW / 2, -badgeH / 2, badgeW, badgeH, 999);
