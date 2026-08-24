@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Infrastructure & Hospital Gallery - AAROGYA ONE</title>
+  <meta name="description" content="Browse high-definition photography of AAROGYA ONE hospital interiors, diagnostic labs, operation theatres, and medical facilities across India.">
+  
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-icon-wrapper">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+        </div>
+        <div class="brand-text">AAROGYA<span>ONE</span></div>
+      </a>
+
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="doctors.html" class="nav-link">Find Doctors</a></li>
+        <li><a href="specialties.html" class="nav-link">Specialties</a></li>
+        <li><a href="hospitals.html" class="nav-link">Hospitals</a></li>
+        <li><a href="services.html" class="nav-link">Services</a></li>
+        <li><a href="packages.html" class="nav-link">Health Packages</a></li>
+        <li><a href="offers.html" class="nav-link">Offers</a></li>
+        <li><a href="articles.html" class="nav-link">Health Articles</a></li>
+      </ul>
+
+      <div class="nav-right-actions">
+        <a href="tel:108" class="emergency-pill"><span class="emergency-pulse"></span> Emergency 108</a>
+        <a href="booking.html" class="btn btn-primary">Book Appointment</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page Banner -->
+  <section style="background: linear-gradient(180deg, var(--secondary-blue) 0%, var(--bg-light) 100%); padding-top: 8.5rem; padding-bottom: 3.5rem;">
+    <div class="container text-center" style="max-width: 760px; margin: 0 auto;">
+      <div class="badge-tag">Medical Infrastructure</div>
+      <h1>Hospital Infrastructure Gallery</h1>
+      <p class="section-subtitle">Take a visual tour of our state-of-the-art hospitals, ICUs, diagnostic labs, and patient lounges</p>
+    </div>
+  </section>
+
+  <!-- Gallery Filter Buttons Bar -->
+  <section class="section-padding container">
+    <div style="display:flex; justify-content:center; gap:0.75rem; flex-wrap:wrap; margin-bottom:3rem;">
+      <button class="btn btn-primary gallery-filter-btn active" data-filter="all">All Facilities</button>
+      <button class="btn btn-outline gallery-filter-btn" data-filter="hospitals">Reception & Lounges</button>
+      <button class="btn btn-outline gallery-filter-btn" data-filter="ots">Operation Theatres & ICUs</button>
+      <button class="btn btn-outline gallery-filter-btn" data-filter="labs">Diagnostic Labs & MRI</button>
+      <button class="btn btn-outline gallery-filter-btn" data-filter="staff">Doctors & Clinical Care</button>
+    </div>
+
+    <!-- Gallery Masonry Grid -->
+    <div class="grid-3" id="gallery-masonry-grid" style="gap:1.5rem;">
+
+      <!-- Image 1 -->
+      <div class="tilt-card gallery-item" data-category="hospitals" data-caption="AAROGYA ONE Executive Patient Lounge - Mumbai Central" style="cursor:pointer; overflow:hidden; border-radius:var(--radius-lg);">
+        <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=800&q=80" alt="Executive Patient Lounge" style="width:100%; height:260px; object-fit:cover;">
+        <div style="padding:1rem; background:#fff; font-weight:700; font-size:0.9rem;">Executive Patient Lounge - Mumbai</div>
+      </div>
+
+      <!-- Image 2 -->
+      <div class="tilt-card gallery-item" data-category="ots" data-caption="Hybrid Modular Operation Theatre with Robotic Laparoscopy" style="cursor:pointer; overflow:hidden; border-radius:var(--radius-lg);">
+        <img src="https://images.unsplash.com/photo-1512678080530-7760d81faba6?auto=format&fit=crop&w=800&q=80" alt="Operation Theatre" style="width:100%; height:260px; object-fit:cover;">
+        <div style="padding:1rem; background:#fff; font-weight:700; font-size:0.9rem;">Modular Operation Theatre - Delhi NCR</div>
+      </div>
+
+      <!-- Image 3 -->
+      <div class="tilt-card gallery-item" data-category="labs" data-caption="3T Silent MRI Suite & NABL Diagnostic Lab" style="cursor:pointer; overflow:hidden; border-radius:var(--radius-lg);">
+        <img src="https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=800&q=80" alt="Diagnostic MRI Lab" style="width:100%; height:260px; object-fit:cover;">
+        <div style="padding:1rem; background:#fff; font-weight:700; font-size:0.9rem;">3T Silent MRI Suite - Bengaluru</div>
+      </div>
+
+      <!-- Image 4 -->
+      <div class="tilt-card gallery-item" data-category="ots" data-caption="24/7 Cardiac Trauma & Emergency ICU Unit" style="cursor:pointer; overflow:hidden; border-radius:var(--radius-lg);">
+        <img src="https://images.unsplash.com/photo-1538108149393-fbbd81895907?auto=format&fit=crop&w=800&q=80" alt="Emergency ICU" style="width:100%; height:260px; object-fit:cover;">
+        <div style="padding:1rem; background:#fff; font-weight:700; font-size:0.9rem;">24/7 Emergency Trauma ICU - Hyderabad</div>
+      </div>
+
+      <!-- Image 5 -->
+      <div class="tilt-card gallery-item" data-category="staff" data-caption="Senior Doctors & Clinical Nursing Team" style="cursor:pointer; overflow:hidden; border-radius:var(--radius-lg);">
+        <img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?auto=format&fit=crop&w=800&q=80" alt="Medical Staff" style="width:100%; height:260px; object-fit:cover;">
+        <div style="padding:1rem; background:#fff; font-weight:700; font-size:0.9rem;">Clinical Care Staff - Pune</div>
+      </div>
+
+      <!-- Image 6 -->
+      <div class="tilt-card gallery-item" data-category="hospitals" data-caption="Specialist OPD Consultation Suite" style="cursor:pointer; overflow:hidden; border-radius:var(--radius-lg);">
+        <img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=800&q=80" alt="Consultation Room" style="width:100%; height:260px; object-fit:cover;">
+        <div style="padding:1rem; background:#fff; font-weight:700; font-size:0.9rem;">Doctor Consultation Suite - Chennai</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Fullscreen Lightbox Modal -->
+  <div class="lightbox-modal" id="gallery-lightbox">
+    <span class="lightbox-close">&times;</span>
+    <div class="lightbox-img-container">
+      <img id="lightbox-img" src="" alt="Enlarged view">
+      <div id="lightbox-caption" style="color:#fff; text-align:center; margin-top:1rem; font-weight:600;"></div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container text-center" style="padding-bottom: 2rem;">
+      <p>&copy; 2026 AAROGYA ONE Healthcare Platform. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/gallery-lightbox.js"></script>
+</body>
+</html>

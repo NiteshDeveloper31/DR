@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact & Hospital Locations - AAROGYA ONE</title>
+  <meta name="description" content="Get in touch with AAROGYA ONE hospital locations in Mumbai, Delhi, Bengaluru, Hyderabad, Pune, and Chennai.">
+  
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-icon-wrapper">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+        </div>
+        <div class="brand-text">AAROGYA<span>ONE</span></div>
+      </a>
+
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="doctors.html" class="nav-link">Find Doctors</a></li>
+        <li><a href="specialties.html" class="nav-link">Specialties</a></li>
+        <li><a href="hospitals.html" class="nav-link">Hospitals</a></li>
+        <li><a href="services.html" class="nav-link">Services</a></li>
+        <li><a href="packages.html" class="nav-link">Health Packages</a></li>
+        <li><a href="offers.html" class="nav-link">Offers</a></li>
+        <li><a href="articles.html" class="nav-link">Health Articles</a></li>
+      </ul>
+
+      <div class="nav-right-actions">
+        <a href="tel:108" class="emergency-pill"><span class="emergency-pulse"></span> Emergency 108</a>
+        <a href="booking.html" class="btn btn-primary">Book Appointment</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page Banner -->
+  <section style="background: linear-gradient(180deg, var(--secondary-blue) 0%, var(--bg-light) 100%); padding-top: 8.5rem; padding-bottom: 3.5rem;">
+    <div class="container text-center" style="max-width: 760px; margin: 0 auto;">
+      <div class="badge-tag">Get in Touch</div>
+      <h1>Contact & Hospital Hubs</h1>
+      <p class="section-subtitle">Connect with our patient care coordinators or reach emergency response teams</p>
+    </div>
+  </section>
+
+  <!-- Contact Form & Info Grid -->
+  <section class="section-padding container">
+    <div class="grid-2" style="gap: 3rem; align-items: start;">
+
+      <!-- Left Column: Contact Form -->
+      <div class="glass-panel" style="padding: 2.5rem;">
+        <h3 style="margin-bottom: 0.5rem;">Send Us a Message</h3>
+        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem;">Our medical desk responds within 2 hours</p>
+
+        <form onsubmit="alert('Thank you for your message! Our patient care coordinator will contact you shortly.'); return false;">
+          <div style="display:flex; flex-direction:column; gap:1.25rem;">
+            <div>
+              <label style="font-size:0.85rem; font-weight:700;">Your Full Name *</label>
+              <input type="text" placeholder="e.g. Ramesh Kulkarni" required style="width:100%; padding:0.75rem; border:1px solid var(--border-light); border-radius:var(--radius-sm); margin-top:0.3rem;">
+            </div>
+
+            <div class="grid-2" style="gap:1rem;">
+              <div>
+                <label style="font-size:0.85rem; font-weight:700;">Mobile Phone *</label>
+                <input type="tel" placeholder="+91 98765 43210" required style="width:100%; padding:0.75rem; border:1px solid var(--border-light); border-radius:var(--radius-sm); margin-top:0.3rem;">
+              </div>
+              <div>
+                <label style="font-size:0.85rem; font-weight:700;">Preferred City</label>
+                <select style="width:100%; padding:0.75rem; border:1px solid var(--border-light); border-radius:var(--radius-sm); margin-top:0.3rem; font-weight:600;">
+                  <option>Mumbai Central</option>
+                  <option>Delhi NCR (Gurgaon)</option>
+                  <option>Bengaluru Indiranagar</option>
+                  <option>Hyderabad Jubilee Hills</option>
+                  <option>Pune Koregaon Park</option>
+                  <option>Chennai Anna Nagar</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label style="font-size:0.85rem; font-weight:700;">Message / Health Inquiry *</label>
+              <textarea rows="4" placeholder="How can our clinical team help you today?" required style="width:100%; padding:0.75rem; border:1px solid var(--border-light); border-radius:var(--radius-sm); margin-top:0.3rem; font-family:inherit;"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="height: 50px;">Submit Inquiry</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Right Column: Emergency Contacts & Location List -->
+      <div>
+        <div style="background: rgba(239, 68, 68, 0.1); border: 2px solid #EF4444; border-radius: var(--radius-lg); padding: 2rem; margin-bottom: 2rem;">
+          <h3 style="color: #DC2626; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+            24x7 Emergency Trauma Desk
+          </h3>
+          <p style="font-size: 0.9rem; color: var(--text-body); margin-bottom: 1rem;">
+            For immediate cardiac, neurological, or trauma ambulance assistance:
+          </p>
+          <div style="font-size: 1.5rem; font-weight: 800; color: #DC2626;">Toll-Free: 1800-AAROGYA-ONE</div>
+          <div style="font-size: 1.1rem; font-weight: 700; color: var(--text-heading); margin-top: 0.2rem;">Ambulance Direct: 108</div>
+        </div>
+
+        <h3 style="margin-bottom: 1rem;">Flagship Medical Hubs</h3>
+
+        <div style="display: flex; flex-direction: column; gap: 1rem;">
+          <div style="background:#fff; border:1px solid var(--border-light); padding:1.25rem; border-radius:var(--radius-md);">
+            <div style="font-weight:700; color:var(--primary-teal);">Mumbai Central Super Specialty</div>
+            <div style="font-size:0.85rem; color:var(--text-muted); margin-top:0.2rem;">Dr. E. Moses Road, Near Station, Mumbai - 400011</div>
+            <div style="font-size:0.85rem; font-weight:600; color:var(--accent-emerald); margin-top:0.4rem;">Phone: +91 (022) 6900 8800</div>
+          </div>
+
+          <div style="background:#fff; border:1px solid var(--border-light); padding:1.25rem; border-radius:var(--radius-md);">
+            <div style="font-weight:700; color:var(--primary-teal);">Delhi NCR Medical Hub</div>
+            <div style="font-size:0.85rem; color:var(--text-muted); margin-top:0.2rem;">Sector 44, HUDA City Centre, Gurgaon, Delhi NCR - 122003</div>
+            <div style="font-size:0.85rem; font-weight:600; color:var(--accent-emerald); margin-top:0.4rem;">Phone: +91 (0124) 4800 9900</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container text-center" style="padding-bottom: 2rem;">
+      <p>&copy; 2026 AAROGYA ONE Healthcare Platform. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

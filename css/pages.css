@@ -1,0 +1,342 @@
+/* ==========================================================================
+   AAROGYA ONE - Pages Specific Stylesheet & Product UI Components
+   Care Match, Bento Grids, Timelines, Trust Center, Lightbox & Mobile Rules
+   ========================================================================== */
+
+/* Page Banner & Header Clearance */
+.page-banner {
+  padding-top: 130px !important;
+  padding-bottom: 3.5rem;
+  background: linear-gradient(180deg, var(--secondary-blue) 0%, var(--bg-light) 100%);
+  border-bottom: 1px solid var(--border-light);
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 991px) {
+  .page-banner {
+    padding-top: 105px !important;
+    padding-bottom: 2.5rem;
+  }
+}
+
+/* Hero Section */
+.hero-section {
+  padding-top: 130px !important;
+  padding-bottom: 4rem;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(180deg, rgba(235, 243, 245, 0.6) 0%, var(--bg-light) 100%);
+}
+
+@media (max-width: 991px) {
+  .hero-section {
+    padding-top: 105px !important;
+    padding-bottom: 3rem;
+  }
+}
+
+.hero-search-card {
+  background: var(--bg-white);
+  padding: 1.5rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-teal-subtle);
+  box-shadow: var(--shadow-md);
+  margin-top: 2rem;
+}
+
+.hero-search-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  gap: 1rem;
+  align-items: flex-end;
+}
+
+@media (max-width: 768px) {
+  .hero-search-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.search-field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.search-field-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.search-field-select, .search-field-input {
+  width: 100%;
+  height: 50px;
+  padding: 0 1rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-light);
+  background: var(--bg-light);
+  color: var(--text-heading);
+  font-weight: 600;
+  transition: all var(--transition-fast);
+}
+
+.search-field-select:focus, .search-field-input:focus {
+  border-color: var(--primary-teal);
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(10, 77, 78, 0.1);
+}
+
+/* CARE MATCH Interactive Feature Widget */
+.care-match-card-wrapper {
+  background: var(--bg-white);
+  border: 1px solid var(--border-teal-subtle);
+  border-radius: var(--radius-lg);
+  padding: 2.25rem;
+  box-shadow: var(--shadow-md);
+}
+
+.care-match-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+@media (max-width: 991px) {
+  .care-match-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.symptom-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.symptom-btn {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  border-radius: var(--radius-md);
+  background: var(--bg-light);
+  border: 1.5px solid var(--border-light);
+  text-align: left;
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.symptom-btn:hover {
+  border-color: var(--border-accent);
+  background: var(--secondary-blue);
+  transform: translateX(4px);
+}
+
+.symptom-btn.active {
+  border-color: var(--accent-mint);
+  background: var(--secondary-blue);
+  box-shadow: var(--shadow-sm);
+}
+
+.symptom-icon {
+  font-size: 1.5rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-sm);
+  flex-shrink: 0;
+}
+
+.symptom-title {
+  font-weight: 700;
+  color: var(--text-heading);
+  font-size: 0.95rem;
+}
+
+.symptom-sub {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-top: 0.15rem;
+}
+
+.match-result-card {
+  background: #fff;
+  border-radius: var(--radius-lg);
+  border: 1.5px solid var(--accent-mint);
+  padding: 1.75rem;
+  box-shadow: var(--shadow-glow);
+}
+
+/* Bento Grid System */
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+@media (max-width: 991px) {
+  .bento-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .bento-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.bento-item {
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all var(--transition-normal);
+}
+
+.bento-item:hover {
+  transform: translateY(-4px);
+  border-color: var(--border-accent);
+  box-shadow: var(--shadow-md);
+}
+
+.bento-large {
+  grid-column: span 2;
+  grid-row: span 2;
+  background: linear-gradient(135deg, var(--primary-teal) 0%, var(--primary-dark) 100%);
+  color: #fff;
+}
+
+.bento-large h3, .bento-large p {
+  color: #fff;
+}
+
+.bento-wide {
+  grid-column: span 2;
+}
+
+/* Timeline Flow */
+.timeline-track {
+  position: relative;
+  padding-left: 2rem;
+  border-left: 2px dashed var(--accent-mint);
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  margin-top: 2rem;
+}
+
+.timeline-item {
+  position: relative;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -2.6rem;
+  top: 0.2rem;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--accent-mint);
+  border: 4px solid var(--bg-light);
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.5);
+}
+
+.timeline-year {
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: var(--accent-emerald);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.timeline-title {
+  font-size: 1.2rem;
+  color: var(--text-heading);
+  margin: 0.2rem 0 0.4rem 0;
+}
+
+/* Comparison Table */
+.comparison-table-wrapper {
+  overflow-x: auto;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-light);
+  background: var(--bg-white);
+}
+
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.9rem;
+}
+
+.comparison-table th, .comparison-table td {
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.comparison-table th {
+  background: var(--secondary-blue);
+  color: var(--primary-teal);
+  font-weight: 800;
+  font-size: 0.95rem;
+}
+
+/* Lightbox Modal */
+.lightbox-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(6, 50, 51, 0.95);
+  backdrop-filter: blur(12px);
+  z-index: 3000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.lightbox-modal.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.lightbox-content {
+  max-width: 900px;
+  max-height: 85vh;
+  position: relative;
+}
+
+.lightbox-content img {
+  width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+}

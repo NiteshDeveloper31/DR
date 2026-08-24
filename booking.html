@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Doctor Appointment - AAROGYA ONE</title>
+  <meta name="description" content="Select specialty, doctor, date, and time slot to confirm your doctor appointment with instant digital pass.">
+  
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-icon-wrapper">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+        </div>
+        <div class="brand-text">AAROGYA<span>ONE</span></div>
+      </a>
+
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="doctors.html" class="nav-link">Find Doctors</a></li>
+        <li><a href="specialties.html" class="nav-link">Specialties</a></li>
+        <li><a href="hospitals.html" class="nav-link">Hospitals</a></li>
+        <li><a href="services.html" class="nav-link">Services</a></li>
+        <li><a href="packages.html" class="nav-link">Health Packages</a></li>
+        <li><a href="offers.html" class="nav-link">Offers</a></li>
+        <li><a href="articles.html" class="nav-link">Health Articles</a></li>
+      </ul>
+
+      <div class="nav-right-actions">
+        <a href="tel:108" class="emergency-pill"><span class="emergency-pulse"></span> Emergency 108</a>
+        <a href="booking.html" class="btn btn-primary active">Book Appointment</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page Hero Banner -->
+  <section style="background: linear-gradient(180deg, var(--secondary-blue) 0%, var(--bg-light) 100%); padding-top: 8.5rem; padding-bottom: 3rem;">
+    <div class="container text-center" style="max-width: 760px; margin: 0 auto;">
+      <div class="badge-tag">Seamless Booking</div>
+      <h1>Book Your Doctor Appointment</h1>
+      <p class="section-subtitle">Instant confirmation pass • Zero waiting time • Free cancellation</p>
+    </div>
+  </section>
+
+  <!-- Multi-Step Booking Wizard Card -->
+  <section class="section-padding container" style="max-width: 1000px; margin: 0 auto;">
+    <div class="booking-wizard-card" id="booking-wizard">
+      
+      <!-- Wizard Step Header -->
+      <div class="wizard-steps-header">
+        <div class="wizard-step-item active" data-step="1">
+          <div class="wizard-step-num">1</div>
+          <span>Specialty</span>
+        </div>
+        <div class="wizard-step-item" data-step="2">
+          <div class="wizard-step-num">2</div>
+          <span>Doctor</span>
+        </div>
+        <div class="wizard-step-item" data-step="3">
+          <div class="wizard-step-num">3</div>
+          <span>Date</span>
+        </div>
+        <div class="wizard-step-item" data-step="4">
+          <div class="wizard-step-num">4</div>
+          <span>Time Slot</span>
+        </div>
+        <div class="wizard-step-item" data-step="5">
+          <div class="wizard-step-num">5</div>
+          <span>Patient Info</span>
+        </div>
+        <div class="wizard-step-item" data-step="6">
+          <div class="wizard-step-num">6</div>
+          <span>Confirmation</span>
+        </div>
+      </div>
+
+      <!-- Wizard Body Panes -->
+      <div class="wizard-body">
+
+        <!-- Pane 1: Select Specialty -->
+        <div class="wizard-pane" style="display: block;">
+          <h3 style="margin-bottom: 0.5rem;">Step 1: Select Medical Specialty</h3>
+          <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem;">Choose the department for your appointment</p>
+
+          <div class="grid-3" style="gap: 1rem;">
+            <div class="specialty-card booking-spec-card selected" data-spec="Cardiology" style="cursor:pointer; padding:1.25rem;">
+              <h4 style="color:var(--primary-teal);">Cardiology</h4>
+              <p style="font-size:0.8rem; color:var(--text-muted);">Heart & blood vessels</p>
+            </div>
+            <div class="specialty-card booking-spec-card" data-spec="Dermatology" style="cursor:pointer; padding:1.25rem;">
+              <h4 style="color:var(--primary-teal);">Dermatology</h4>
+              <p style="font-size:0.8rem; color:var(--text-muted);">Skin, hair & nails</p>
+            </div>
+            <div class="specialty-card booking-spec-card" data-spec="Orthopedics" style="cursor:pointer; padding:1.25rem;">
+              <h4 style="color:var(--primary-teal);">Orthopedics</h4>
+              <p style="font-size:0.8rem; color:var(--text-muted);">Bones & joints</p>
+            </div>
+            <div class="specialty-card booking-spec-card" data-spec="Neurology" style="cursor:pointer; padding:1.25rem;">
+              <h4 style="color:var(--primary-teal);">Neurology</h4>
+              <p style="font-size:0.8rem; color:var(--text-muted);">Brain & spine</p>
+            </div>
+            <div class="specialty-card booking-spec-card" data-spec="Pediatrics" style="cursor:pointer; padding:1.25rem;">
+              <h4 style="color:var(--primary-teal);">Pediatrics</h4>
+              <p style="font-size:0.8rem; color:var(--text-muted);">Child healthcare</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pane 2: Select Doctor -->
+        <div class="wizard-pane" style="display: none;">
+          <h3 style="margin-bottom: 0.5rem;">Step 2: Select Doctor Specialist</h3>
+          <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem;">Choose from available senior doctors</p>
+
+          <div id="wizard-doctors-grid" style="display:flex; flex-direction:column; gap:1rem;">
+            <!-- Rendered dynamically by booking.js -->
+          </div>
+        </div>
+
+        <!-- Pane 3: Select Date -->
+        <div class="wizard-pane" style="display: none;">
+          <h3 style="margin-bottom: 0.5rem;">Step 3: Choose Appointment Date</h3>
+          <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem;">Select your preferred date</p>
+
+          <div style="max-width: 400px; margin: 0 auto; text-align: center;">
+            <input type="date" id="booking-date-picker" style="width:100%; padding:1rem; border:2px solid var(--primary-teal); border-radius:var(--radius-md); font-size:1.1rem; font-weight:700;">
+          </div>
+        </div>
+
+        <!-- Pane 4: Select Time Slot -->
+        <div class="wizard-pane" style="display: none;">
+          <h3 style="margin-bottom: 0.5rem;">Step 4: Select Available Time Slot</h3>
+          <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem;">Available slots for morning & afternoon sessions</p>
+
+          <div class="slot-grid">
+            <button class="slot-btn selected">09:00 AM</button>
+            <button class="slot-btn">09:30 AM</button>
+            <button class="slot-btn">10:00 AM</button>
+            <button class="slot-btn disabled">10:30 AM</button>
+            <button class="slot-btn">11:30 AM</button>
+            <button class="slot-btn">02:00 PM</button>
+            <button class="slot-btn">04:30 PM</button>
+            <button class="slot-btn">06:00 PM</button>
+          </div>
+        </div>
+
+        <!-- Pane 5: Enter Patient Details -->
+        <div class="wizard-pane" style="display: none;">
+          <h3 style="margin-bottom: 0.5rem;">Step 5: Patient Details & Mode</h3>
+          <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem;">Provide patient info for your digital pass</p>
+
+          <form id="patient-details-form" onsubmit="return false;">
+            <div class="grid-2" style="gap: 1.25rem;">
+              <div>
+                <label style="font-size:0.85rem; font-weight:700; color:var(--text-heading);">Patient Full Name *</label>
+                <input type="text" id="patient-name" placeholder="e.g. Rahul Sharma" required style="width:100%; padding:0.75rem; border:1px solid var(--border-light); border-radius:var(--radius-sm); margin-top:0.3rem;">
+              </div>
+              <div>
+                <label style="font-size:0.85rem; font-weight:700; color:var(--text-heading);">Mobile Phone Number *</label>
+                <input type="tel" id="patient-phone" placeholder="+91 98765 43210" required style="width:100%; padding:0.75rem; border:1px solid var(--border-light); border-radius:var(--radius-sm); margin-top:0.3rem;">
+              </div>
+              <div>
+                <label style="font-size:0.85rem; font-weight:700; color:var(--text-heading);">Email Address</label>
+                <input type="email" id="patient-email" placeholder="patient@example.com" style="width:100%; padding:0.75rem; border:1px solid var(--border-light); border-radius:var(--radius-sm); margin-top:0.3rem;">
+              </div>
+              <div>
+                <label style="font-size:0.85rem; font-weight:700; color:var(--text-heading);">Consultation Mode</label>
+                <select id="consult-mode" style="width:100%; padding:0.75rem; border:1px solid var(--border-light); border-radius:var(--radius-sm); margin-top:0.3rem; font-weight:600;">
+                  <option>In-Person Hospital OPD</option>
+                  <option>Online HD Video Consultation</option>
+                </select>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <!-- Pane 6: Booking Confirmation Pass -->
+        <div class="wizard-pane" style="display: none;" id="confirmation-ticket-container">
+          <!-- Rendered dynamically by booking.js -->
+        </div>
+
+        <!-- Navigation Action Buttons Bar -->
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-top:2.5rem; padding-top:1.5rem; border-top:1px solid var(--border-light);">
+          <button id="wizard-prev-btn" class="btn btn-secondary" style="display:none;">&larr; Back</button>
+          <button id="wizard-next-btn" class="btn btn-primary" style="margin-left:auto;">Continue to Next Step &rarr;</button>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container text-center" style="padding-bottom: 2rem;">
+      <p>&copy; 2026 AAROGYA ONE Healthcare Platform. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/booking.js"></script>
+</body>
+</html>

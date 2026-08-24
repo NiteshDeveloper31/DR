@@ -1,0 +1,618 @@
+/* ==========================================================================
+   AAROGYA ONE - Components Stylesheet
+   Navbar, Footer, Cards, Modal, Cursor, Buttons & Mobile Drawer Fixes
+   ========================================================================== */
+
+/* Custom Desktop Cursor */
+.custom-cursor-dot, .custom-cursor-ring {
+  pointer-events: none !important;
+  position: fixed;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: transform 0.15s ease-out, opacity 0.2s ease-in-out;
+}
+
+.custom-cursor-dot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--accent-mint);
+}
+
+.custom-cursor-ring {
+  width: 36px;
+  height: 36px;
+  border: 1.5px solid var(--primary-teal);
+  opacity: 0.5;
+}
+
+body.cursor-hover .custom-cursor-ring {
+  transform: translate(-50%, -50%) scale(1.6);
+  border-color: var(--accent-mint);
+  background: rgba(16, 185, 129, 0.08);
+}
+
+@media (max-width: 991px) {
+  .custom-cursor-dot, .custom-cursor-ring { display: none !important; }
+}
+
+/* Header & Navbar */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  transition: all var(--transition-normal);
+  padding: 1.1rem 0;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.site-header.scrolled {
+  padding: 0.75rem 0;
+  box-shadow: var(--shadow-sm);
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+/* Brand Logo */
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 800;
+  font-size: 1.25rem;
+  color: var(--primary-teal);
+  letter-spacing: -0.03em;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.brand-icon-wrapper {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--primary-teal), var(--primary-dark));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(10, 77, 78, 0.2);
+  color: var(--accent-mint);
+  flex-shrink: 0;
+}
+
+.brand-icon-wrapper svg {
+  width: 20px;
+  height: 20px;
+}
+
+.brand-text span {
+  color: var(--accent-mint);
+}
+
+/* Navigation Links */
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+.nav-link {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--text-body);
+  position: relative;
+  padding: 0.4rem 0;
+  white-space: nowrap;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2.5px;
+  background: var(--accent-mint);
+  border-radius: 2px;
+  transition: width var(--transition-fast);
+}
+
+.nav-link:hover, .nav-link.active {
+  color: var(--primary-teal);
+}
+
+.nav-link:hover::after, .nav-link.active::after {
+  width: 100%;
+}
+
+.nav-right-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1010;
+  pointer-events: auto !important;
+}
+
+.emergency-pill {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-full);
+  background: #FEF2F2;
+  border: 1px solid #FCA5A5;
+  color: #DC2626;
+  font-weight: 700;
+  font-size: 0.8rem;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.emergency-pulse {
+  width: 7px;
+  height: 7px;
+  background-color: #DC2626;
+  border-radius: 50%;
+  box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.7);
+  animation: pulse-red 1.6s infinite;
+}
+
+@keyframes pulse-red {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.7); }
+  70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(220, 38, 38, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(220, 38, 38, 0); }
+}
+
+/* Mobile Nav Toggle Button */
+.mobile-nav-toggle {
+  display: none;
+  font-size: 1.5rem;
+  color: var(--primary-teal);
+  padding: 0.5rem;
+  border-radius: var(--radius-sm);
+  background: var(--secondary-blue);
+  cursor: pointer !important;
+  pointer-events: auto !important;
+  position: relative !important;
+  z-index: 1020 !important;
+  border: 1px solid var(--border-teal-subtle);
+  touch-action: manipulation;
+}
+
+.mobile-nav-toggle * {
+  pointer-events: none !important;
+}
+
+@media (max-width: 991px) {
+  .nav-menu { display: none; }
+  .mobile-nav-toggle { display: flex !important; align-items: center; justify-content: center; }
+}
+
+@media (max-width: 600px) {
+  .nav-right-actions .btn-primary { display: none; }
+  .brand-text { font-size: 1.1rem; }
+  .emergency-pill span:not(.emergency-pulse) { font-size: 0.75rem; }
+}
+
+/* 3D Tilt Card Base */
+.tilt-card {
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  transition: transform 0.1s ease-out, box-shadow var(--transition-normal);
+}
+
+.tilt-card-inner {
+  background: var(--bg-white);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: border-color var(--transition-fast);
+}
+
+.tilt-card:hover .tilt-card-inner {
+  border-color: var(--border-accent);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Doctor Card Image Box with Gradient Fallback */
+.doctor-card {
+  position: relative;
+}
+
+.doctor-img-box {
+  position: relative;
+  height: 260px;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--secondary-blue) 0%, #D8E9EC 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.doctor-img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform var(--transition-slow);
+}
+
+.doctor-card:hover .doctor-img-box img {
+  transform: scale(1.06);
+}
+
+.availability-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(16, 185, 129, 0.95);
+  backdrop-filter: blur(8px);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.3rem 0.75rem;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  box-shadow: var(--shadow-sm);
+  z-index: 2;
+}
+
+.doctor-info-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.doctor-name {
+  font-size: 1.25rem;
+  margin-bottom: 0.25rem;
+  color: var(--text-heading);
+}
+
+.doctor-spec {
+  color: var(--accent-emerald);
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+}
+
+.doctor-qual {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+
+.doctor-meta-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  background: var(--bg-light);
+  padding: 0.85rem;
+  border-radius: var(--radius-md);
+  margin-bottom: 1.25rem;
+  font-size: 0.85rem;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--text-body);
+}
+
+.meta-item svg {
+  width: 16px;
+  height: 16px;
+  color: var(--primary-teal);
+  flex-shrink: 0;
+}
+
+.doctor-fee {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--primary-dark);
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-light);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.doctor-fee span {
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--text-muted);
+}
+
+/* Hospital Card */
+.hospital-card-img {
+  height: 220px;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--secondary-blue) 0%, #D8E9EC 100%);
+}
+
+.hospital-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.hospital-card:hover .hospital-card-img img {
+  transform: scale(1.05);
+}
+
+.hospital-tag {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  background: var(--primary-teal);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.35rem 0.8rem;
+  border-radius: var(--radius-sm);
+  z-index: 2;
+}
+
+.hospital-body {
+  padding: 1.5rem;
+}
+
+.facility-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 1rem 0 1.25rem 0;
+}
+
+.facility-chip {
+  background: var(--secondary-blue);
+  color: var(--primary-teal);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.6rem;
+  border-radius: var(--radius-sm);
+}
+
+/* Health Package Card */
+.package-card {
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  background: var(--bg-white);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: all var(--transition-normal);
+}
+
+.package-card.popular {
+  border: 2px solid var(--accent-mint);
+  box-shadow: var(--shadow-glow);
+}
+
+.package-popular-ribbon {
+  position: absolute;
+  top: -12px;
+  right: 24px;
+  background: var(--accent-mint);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 800;
+  padding: 0.25rem 0.85rem;
+  border-radius: var(--radius-full);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.package-price {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--primary-teal);
+  margin: 1rem 0;
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.package-original-price {
+  font-size: 1.1rem;
+  color: var(--text-light);
+  text-decoration: line-through;
+  font-weight: 400;
+}
+
+.package-features {
+  list-style: none;
+  margin: 1.5rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.package-features li {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.95rem;
+  color: var(--text-body);
+}
+
+.package-features li svg {
+  color: var(--accent-emerald);
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+/* Testimonial / Review Card */
+.review-card {
+  background: var(--bg-white);
+  padding: 2rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.star-rating {
+  color: #F59E0B;
+  display: flex;
+  gap: 0.25rem;
+  margin-bottom: 1rem;
+}
+
+.review-user {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-light);
+}
+
+.review-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: var(--secondary-blue);
+}
+
+.review-user-name {
+  font-weight: 700;
+  color: var(--text-heading);
+}
+
+.review-user-loc {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* Footer Section */
+.site-footer {
+  background: var(--bg-dark);
+  color: #94A3B8;
+  padding-top: 5rem;
+  padding-bottom: 2rem;
+  margin-top: auto;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-brand {
+  color: #fff;
+  margin-bottom: 1.5rem;
+}
+
+.footer-emergency-card {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  padding: 1.25rem;
+  border-radius: var(--radius-md);
+  margin-top: 1.5rem;
+}
+
+.footer-emergency-card h5 {
+  color: #EF4444;
+  margin-bottom: 0.3rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.footer-title {
+  color: #fff;
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+.footer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.footer-links a:hover {
+  color: var(--accent-mint);
+  padding-left: 4px;
+}
+
+.footer-bottom {
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.875rem;
+}
+
+/* Transform-based Rock Solid Mobile Drawer */
+.mobile-drawer {
+  position: fixed !important;
+  top: 0 !important;
+  right: 0 !important;
+  width: 85% !important;
+  max-width: 340px !important;
+  height: 100vh !important;
+  background: #ffffff !important;
+  z-index: 999999 !important;
+  box-shadow: -10px 0 30px rgba(0, 0, 0, 0.3) !important;
+  transform: translateX(105%) !important;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  padding: 2rem 1.5rem !important;
+  display: flex !important;
+  flex-direction: column !important;
+  overflow-y: auto !important;
+  pointer-events: auto !important;
+}
+
+.mobile-drawer.active {
+  transform: translateX(0%) !important;
+}
+
+.drawer-backdrop {
+  position: fixed !important;
+  inset: 0 !important;
+  background: rgba(0, 0, 0, 0.6) !important;
+  backdrop-filter: blur(4px) !important;
+  z-index: 999998 !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  transition: opacity 0.3s ease !important;
+}
+
+.drawer-backdrop.active {
+  opacity: 1 !important;
+  pointer-events: auto !important;
+}
