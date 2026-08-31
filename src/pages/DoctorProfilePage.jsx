@@ -234,36 +234,38 @@ export default function DoctorProfilePage({ doctorId, setActivePage, setSelected
         </div>
 
         {/* 5. OPD AVAILABILITY SCHEDULE MATRIX */}
-        <div className="bg-white rounded-3xl p-6 sm:p-8 border border-[#DCECEF] shadow-card space-y-6">
-          <div className="flex items-center justify-between">
-            <div>
-              <div className="text-xs font-extrabold text-[#087F8C] uppercase tracking-wider">Weekly Schedule</div>
-              <h3 className="text-xl font-extrabold text-[#123238]">OPD Consultation Availability Matrix</h3>
+        <div className="bg-white rounded-3xl p-4 sm:p-8 border border-[#DCECEF] shadow-card space-y-5">
+          <div>
+            <div className="text-xs font-extrabold text-[#087F8C] uppercase tracking-wider flex items-center space-x-1.5 mb-1">
+              <Clock className="w-4 h-4 text-[#075E68]" />
+              <span>Weekly OPD Schedule</span>
             </div>
-            <Clock className="w-5 h-5 text-[#075E68]" />
+            <h3 className="text-lg sm:text-xl font-extrabold text-[#123238]">
+              OPD Consultation Availability Matrix
+            </h3>
           </div>
 
-          {/* Matrix Table Grid */}
-          <div className="grid grid-cols-6 gap-2 text-center">
+          {/* Matrix Table Grid (3 Columns on Mobile, 6 Columns on Desktop) */}
+          <div className="grid grid-cols-3 sm:grid-cols-6 gap-2 sm:gap-3 text-center">
             {allDays.map((day) => {
               const isAvailable = activeDays.includes(day);
               return (
                 <div 
                   key={day} 
-                  className={`p-4 rounded-2xl border transition-all ${
+                  className={`p-3 sm:p-4 rounded-2xl border transition-all flex flex-col items-center justify-between ${
                     isAvailable 
                       ? 'bg-[#EAF6FA] border-[#075E68] text-[#075E68] shadow-sm' 
                       : 'bg-[#F8FBFC] border-[#DCECEF] text-[#587176]/50 opacity-60'
                   }`}
                 >
-                  <div className="text-xs font-extrabold">{day}</div>
-                  <div className="mt-2 flex justify-center">
+                  <div className="text-xs font-extrabold uppercase">{day}</div>
+                  <div className="mt-2">
                     {isAvailable ? (
-                      <div className="w-6 h-6 rounded-full bg-[#075E68] text-white flex items-center justify-center text-xs">
+                      <div className="w-6 h-6 rounded-full bg-[#075E68] text-white flex items-center justify-center shadow-sm">
                         <Check className="w-3.5 h-3.5 stroke-[3]" />
                       </div>
                     ) : (
-                      <div className="text-xs text-[#587176]">—</div>
+                      <div className="text-xs text-[#587176] font-bold">—</div>
                     )}
                   </div>
                 </div>
@@ -271,8 +273,8 @@ export default function DoctorProfilePage({ doctorId, setActivePage, setSelected
             })}
           </div>
 
-          <div className="text-xs text-[#587176] bg-[#F8FBFC] p-3 rounded-xl border border-[#DCECEF] flex justify-between items-center">
-            <span>OPD Location: <strong>Block A, 2nd Floor, Room 204</strong></span>
+          <div className="text-xs text-[#587176] bg-[#F8FBFC] p-3.5 rounded-2xl border border-[#DCECEF] flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
+            <span>OPD Location: <strong className="text-[#123238]">Block A, 2nd Floor, Room 204</strong></span>
             <button onClick={handleBookSlot} className="text-[#075E68] font-bold hover:underline">
               Select Specific Time Slot &rarr;
             </button>
