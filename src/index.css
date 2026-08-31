@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --ice-blue: #EAF6FA;
+    --ice-blue-deep: #D8EEF4;
+    --teal: #087F8C;
+    --teal-dark: #075E68;
+    --teal-deep: #043F47;
+    --white: #FFFFFF;
+    --off-white: #F8FBFC;
+    --text-primary: #123238;
+    --text-secondary: #587176;
+    --border: #DCECEF;
+    --success: #159A86;
+    --emergency: #D92D20;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+    color: var(--text-primary);
+    background-color: var(--off-white);
+    overflow-x: hidden;
+  }
+}
+
+/* Custom Healthcare Color Utilities */
+.bg-ice-blue {
+  background-color: #EAF6FA;
+}
+.bg-ice-blue-deep {
+  background-color: #D8EEF4;
+}
+.bg-teal {
+  background-color: #087F8C;
+}
+.bg-teal-dark {
+  background-color: #075E68;
+}
+.bg-teal-deep {
+  background-color: #043F47;
+}
+
+.text-teal {
+  color: #087F8C;
+}
+.text-teal-dark {
+  color: #075E68;
+}
+.text-teal-deep {
+  color: #043F47;
+}
+
+.border-healthcare {
+  border-color: #DCECEF;
+}
+
+.shadow-card {
+  box-shadow: 0 4px 20px rgba(8, 127, 140, 0.05);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F8FBFC;
+}
+::-webkit-scrollbar-thumb {
+  background: #075E68;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #087F8C;
+}

@@ -1,0 +1,80 @@
+export const treatmentsData = [
+  {
+    id: "robotic-knee-replacement",
+    name: "Robotic Knee Replacement",
+    specialtyId: "orthopaedics",
+    specialtyName: "Orthopaedics & Joint Care",
+    description: "Mako Robotic Arm-assisted Total Knee Replacement offering sub-millimeter surgical accuracy, 3D patient-specific bone mapping, minimal tissue disruption, and faster recovery.",
+    symptoms: ["Severe knee joint pain", "Inability to walk 100 meters", "Knee stiffness & deformity", "Lack of relief from medication"],
+    procedureDetails: "3D CT scan mapping -> Robotic bone preparation -> Precision implant alignment -> Quadriceps sparing incision.",
+    recoveryDays: "Walks within 4 hours; full normal activity in 2-3 weeks",
+    doctorId: "dr-vikramaditya-reddy",
+    doctorName: "Dr. Vikramaditya Reddy",
+    image: "https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    id: "coronary-angioplasty-stenting",
+    name: "Coronary Angioplasty & Stenting (PCI)",
+    specialtyId: "cardiac-sciences",
+    specialtyName: "Cardiac Sciences",
+    description: "Emergency and elective radial artery catheterization to clear blocked coronary arteries using Drug-Eluting Stents (DES) with IVUS & FFR guidance.",
+    symptoms: ["Chest pain & pressure (Angina)", "Shortness of breath on exertion", "Sudden heavy sweating", "Abnormal ECG / TMT"],
+    procedureDetails: "Radial wrist access -> Contrast angiography -> Balloon inflation -> Drug-eluting stent placement.",
+    recoveryDays: "24-48 hours hospital stay; normal routine in 5 days",
+    doctorId: "dr-ananya-deshmukh",
+    doctorName: "Dr. Ananya Deshmukh",
+    image: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    id: "stroke-thrombolysis",
+    name: "Hyperacute Stroke Thrombolysis & Care",
+    specialtyId: "neurosciences",
+    specialtyName: "Neurosciences",
+    description: "Emergency clot-busting intravenous tPA therapy administered within the 4.5-hour golden window for acute ischemic stroke patients.",
+    symptoms: ["Sudden facial drooping", "Arm weakness & numbness", "Slurred speech", "Loss of balance"],
+    procedureDetails: "Immediate non-contrast Brain CT scan -> NIHSS assessment -> IV alteplase clot-busting infusion -> Neuro-ICU monitoring.",
+    recoveryDays: "3-5 days acute Neuro-ICU monitoring followed by neuro-rehabilitation",
+    doctorId: "dr-priya-nair",
+    doctorName: "Dr. Priya Nair",
+    image: "https://images.unsplash.com/photo-1559757175-5700dde675bc?auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    id: "laparoscopic-cholecystectomy",
+    name: "Laparoscopic Gallbladder Surgery",
+    specialtyId: "gastroenterology",
+    specialtyName: "Gastroenterology & GI Surgery",
+    description: "Keyhole laparoscopic removal of diseased or stone-filled gallbladder through 3-4 tiny 5mm incisions under general anesthesia.",
+    symptoms: ["Severe right upper abdominal pain", "Nausea after fatty meals", "Gallbladder stones on Ultrasound", "Jaundice risk"],
+    procedureDetails: "Keyhole laparoscopic visualization -> Cystic duct clipping -> Gallbladder extraction.",
+    recoveryDays: "Daycare or 24-hour hospital stay; back to work in 4-5 days",
+    doctorId: "dr-suresh-iyer",
+    doctorName: "Dr. Suresh Iyer",
+    image: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    id: "immunotherapy-cancer-care",
+    name: "Targeted Cancer Immunotherapy",
+    specialtyId: "oncology",
+    specialtyName: "Oncology & Cancer Care",
+    description: "Advanced biological monoclonal antibody infusion that trains the body's immune T-cells to identify and destroy tumor cells without harming healthy tissue.",
+    symptoms: ["Biopsy confirmed malignant tumor", "Gene mutation positive (PD-L1/EGFR)", "Stage III/IV cancer"],
+    procedureDetails: "Genomic mutation testing -> Daycare infusion suite -> Target receptor binding.",
+    recoveryDays: "Daycare procedure; zero hair loss",
+    doctorId: "dr-amit-shah",
+    doctorName: "Dr. Amit Shah",
+    image: "https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    id: "painless-labor-delivery",
+    name: "Painless Normal Birthing & Delivery",
+    specialtyId: "obstetrics-gynecology",
+    specialtyName: "Obstetrics & Gynaecology",
+    description: "Epidural analgesia-assisted natural childbirth conducted in private LDR (Labor-Delivery-Recovery) suites backed by senior obstetricians and NICU team.",
+    symptoms: ["Active labor contractions", "Full term pregnancy (37-40 weeks)"],
+    procedureDetails: "Continuous fetal cardiotocography (CTG) -> Lumbar epidural analgesia -> Private LDR suite delivery.",
+    recoveryDays: "48 hours in luxury post-natal room",
+    doctorId: "dr-sunita-kulkarni",
+    doctorName: "Dr. Sunita Kulkarni",
+    image: "https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=800&q=80"
+  }
+];
