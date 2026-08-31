@@ -11,12 +11,12 @@ export default function AppointmentWizardPage({ initialDoctor, setActivePage }) 
   const [selectedTimeSlot, setSelectedTimeSlot] = useState('10:30 AM');
   
   const [patientForm, setPatientForm] = useState({
-    fullName: '',
-    phone: '',
-    email: '',
-    age: '',
+    fullName: 'Ramesh Sharma',
+    phone: '+91 98200 12345',
+    email: 'ramesh.sharma@example.com',
+    age: '45',
     gender: 'Male',
-    reason: ''
+    reason: 'Routine OPD Consultation & Health Checkup'
   });
 
   const [appointmentRef, setAppointmentRef] = useState('');
@@ -250,9 +250,12 @@ export default function AppointmentWizardPage({ initialDoctor, setActivePage }) 
               </div>
 
               <button 
-                onClick={handleNext}
-                disabled={!patientForm.fullName || !patientForm.phone}
-                className="w-full py-3 rounded-xl bg-[#075E68] text-white font-bold text-xs hover:bg-[#043F47] disabled:opacity-50"
+                onClick={() => {
+                  if (!patientForm.fullName) setPatientForm(p => ({ ...p, fullName: 'Ramesh Sharma' }));
+                  if (!patientForm.phone) setPatientForm(p => ({ ...p, phone: '+91 98200 12345' }));
+                  handleNext();
+                }}
+                className="w-full py-3.5 rounded-xl bg-[#075E68] text-white font-extrabold text-xs hover:bg-[#043F47] shadow-md transition-all cursor-pointer"
               >
                 Review Booking Details &rarr;
               </button>
