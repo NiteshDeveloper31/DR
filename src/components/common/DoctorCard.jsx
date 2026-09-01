@@ -1,88 +1,74 @@
 import React from 'react';
-import { Calendar, Award, MapPin } from 'lucide-react';
+import { Calendar, ArrowRight } from 'lucide-react';
 
 export default function DoctorCard({ doctor, onSelectDoctor, onViewProfile }) {
   return (
-    <div className="bg-white rounded-2xl border border-[#DCECEF] overflow-hidden shadow-card hover:shadow-xl transition-all duration-300 flex flex-col group">
+    <div className="bg-white rounded-3xl border border-[#E8E4DC]/70 overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.03)] hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1">
       
-      {/* Image & Availability Badge */}
-      <div className="relative h-64 bg-gradient-to-br from-[#EAF6FA] to-[#D8EEF4] overflow-hidden">
-        <img 
-          src={doctor.image} 
-          alt={doctor.name} 
-          className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
-          loading="lazy"
-          onError={(e) => {
-            e.target.src = doctor.gender === 'female' 
-              ? "https://images.unsplash.com/photo-1651008376811-b90baee60c1f?auto=format&fit=crop&w=800&q=80" 
-              : "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=800&q=80";
-          }}
-        />
-        <div className="absolute top-3 right-3 bg-white/95 backdrop-blur-md px-3 py-1 rounded-full border border-[#087F8C]/30 shadow-sm flex items-center space-x-1.5">
-          <span className="w-2 h-2 rounded-full bg-[#159A86] animate-pulse"></span>
-          <span className="text-[11px] font-bold text-[#075E68]">{doctor.availabilityStatus}</span>
+      {/* Doctor Photo & Availability Pill */}
+      <div>
+        <div className="relative h-64 bg-[#EAF6FA] overflow-hidden cursor-pointer" onClick={() => onViewProfile(doctor.id)}>
+          <img 
+            src={doctor.image} 
+            alt={doctor.name} 
+            className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+            loading="lazy"
+            onError={(e) => {
+              e.target.src = doctor.gender === 'female' 
+                ? "https://images.unsplash.com/photo-1651008376811-b90baee60c1f?auto=format&fit=crop&w=800&q=80" 
+                : "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=800&q=80";
+            }}
+          />
+          <div className="absolute top-3 right-3 bg-white/95 backdrop-blur-md px-3.5 py-1 rounded-full border border-white/80 shadow-md flex items-center space-x-1.5">
+            <span className="w-2 h-2 rounded-full bg-[#159A86] animate-pulse"></span>
+            <span className="text-[11px] font-extrabold text-[#1A3C34]">{doctor.availabilityStatus}</span>
+          </div>
+          <div className="absolute bottom-3 left-3 bg-[#1A3C34]/90 text-white text-[10px] font-extrabold px-3 py-1 rounded-xl backdrop-blur-md uppercase tracking-wider">
+            {doctor.experienceYears}+ Years Experience
+          </div>
         </div>
-        <div className="absolute bottom-3 left-3 bg-[#043F47]/90 text-white text-[11px] font-semibold px-2.5 py-1 rounded-lg backdrop-blur-md">
-          {doctor.experienceYears}+ Years Exp
-        </div>
-      </div>
 
-      {/* Card Content Body */}
-      <div className="p-5 flex-1 flex flex-col justify-between space-y-4">
-        <div>
-          <div className="text-xs font-bold text-[#087F8C] uppercase tracking-wider mb-1">
+        {/* Clean Essential Info */}
+        <div className="p-6 space-y-2">
+          <div className="text-[10px] font-extrabold text-[#087F8C] uppercase tracking-[0.12em]">
             {doctor.specialtyName}
           </div>
-          <h3 className="text-lg font-bold text-[#123238] group-hover:text-[#075E68] transition-colors leading-snug">
+          <h3 
+            onClick={() => onViewProfile(doctor.id)}
+            className="text-xl font-extrabold text-[#1A3C34] font-serif-editorial group-hover:text-[#087F8C] transition-colors leading-snug cursor-pointer"
+          >
             {doctor.name}
           </h3>
-          <div className="text-xs text-[#587176] font-medium mt-1 line-clamp-1">
+          <p className="text-xs text-[#587176] font-medium line-clamp-1">
             {doctor.qualification}
-          </div>
+          </p>
         </div>
-
-        {/* Languages & Location */}
-        <div className="bg-[#F8FBFC] p-3 rounded-xl space-y-1.5 text-xs text-[#587176] border border-[#DCECEF]">
-          <div className="flex items-center justify-between">
-            <span className="font-semibold text-[#123238]">Languages:</span>
-            <span>{doctor.languages.join(', ')}</span>
-          </div>
-          <div className="flex items-center justify-between">
-            <span className="font-semibold text-[#123238]">Location:</span>
-            <span className="flex items-center space-x-1 text-[#075E68] font-bold">
-              <MapPin className="w-3 h-3 text-[#087F8C]" />
-              <span>Mumbai Central</span>
-            </span>
-          </div>
-        </div>
-
-        {/* Fee & Action Buttons */}
-        <div className="pt-2 border-t border-[#DCECEF]">
-          <div className="flex items-baseline justify-between mb-3">
-            <span className="text-xs text-[#587176]">OPD Consultation Fee</span>
-            <div className="text-lg font-extrabold text-[#075E68]">
-              ₹{doctor.fee}
-            </div>
-          </div>
-
-          <div className="grid grid-cols-2 gap-2">
-            <button 
-              onClick={() => onViewProfile(doctor.id)}
-              className="py-2.5 px-3 rounded-xl border border-[#075E68] text-[#075E68] text-xs font-bold hover:bg-[#EAF6FA] transition-colors text-center"
-            >
-              View Profile
-            </button>
-            <button 
-              onClick={() => onSelectDoctor(doctor)}
-              className="py-2.5 px-3 rounded-xl bg-[#075E68] text-white text-xs font-bold hover:bg-[#043F47] transition-colors text-center flex items-center justify-center space-x-1 shadow-sm"
-            >
-              <Calendar className="w-3.5 h-3.5 text-[#087F8C]" />
-              <span>Book Slot</span>
-            </button>
-          </div>
-        </div>
-
       </div>
+
+      {/* Primary Actions */}
+      <div className="p-6 pt-0 border-t border-[#E8E4DC] mt-2 space-y-3">
+        <div className="flex items-center justify-between text-xs text-[#587176] pt-3">
+          <span>OPD Fee: <strong className="text-[#1A3C34] font-extrabold">₹{doctor.fee}</strong></span>
+          <span className="text-[#087F8C] font-extrabold">Mumbai Central</span>
+        </div>
+
+        <div className="grid grid-cols-2 gap-2.5">
+          <button 
+            onClick={() => onViewProfile(doctor.id)}
+            className="py-3 px-3 rounded-2xl border border-[#1A3C34] text-[#1A3C34] text-xs font-extrabold hover:bg-[#EAF6FA] transition-colors text-center shadow-sm"
+          >
+            View Profile
+          </button>
+          <button 
+            onClick={() => onSelectDoctor(doctor)}
+            className="py-3 px-3 rounded-2xl bg-[#1A3C34] text-white text-xs font-extrabold hover:bg-[#0F3B36] transition-colors text-center flex items-center justify-center space-x-1.5 shadow-md"
+          >
+            <Calendar className="w-3.5 h-3.5 text-[#087F8C]" />
+            <span>Book Slot</span>
+          </button>
+        </div>
+      </div>
+
     </div>
   );
 }

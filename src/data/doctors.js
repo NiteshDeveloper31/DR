@@ -11,7 +11,7 @@ export const doctorsData = [
     languages: ["English", "Hindi", "Marathi"],
     fee: 1800,
     availabilityStatus: "Available Today",
-    image: "https://images.unsplash.com/photo-1651008376811-b90baee60c1f?auto=format&fit=crop&w=800&q=80",
+    image: "/images/doctor_ananya_deshmukh.jpg",
     bio: "Dr. Ananya Deshmukh is a renowned Interventional Cardiologist with over 18 years of expertise in complex coronary angioplasties, TAVI, and heart failure management. Prior to joining Aarogya Prime, she served as Associate Professor at AIIMS New Delhi.",
     expertise: [
       "Complex Coronary Angioplasty & Stenting",
@@ -46,7 +46,7 @@ export const doctorsData = [
     languages: ["English", "Hindi", "Gujarati", "Marathi"],
     fee: 2000,
     availabilityStatus: "Available Tomorrow",
-    image: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=800&q=80",
+    image: "/images/doctor_rajesh_mehta.jpg",
     bio: "Dr. Rajesh Mehta is a pioneer in radial artery angioplasty in India. With over 12,000 successful cardiac interventional procedures, he leads the 24x7 Emergency Chest Pain & Acute Heart Attack Trauma team at Aarogya Prime Hospital.",
     expertise: [
       "Acute Myocardial Infarction Emergency Care",

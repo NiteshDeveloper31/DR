@@ -18,10 +18,7 @@ export default function Footer({ setActivePage }) {
           {/* Brand Col */}
           <div className="lg:col-span-1 space-y-4">
             <div className="flex items-center space-x-3 cursor-pointer" onClick={() => navigateTo('home')}>
-              <div className="w-10 h-10 rounded-xl bg-[#075E68] flex items-center justify-center text-[#EAF6FA] border border-[#087F8C]/30">
-                <HeartPulse className="w-6 h-6 stroke-[2.2]" />
-              </div>
-              <div className="text-xl font-extrabold text-white tracking-tight">
+              <div className="text-xl sm:text-2xl font-extrabold text-white tracking-tight font-serif-editorial">
                 AAROGYA <span className="text-[#087F8C]">PRIME</span>
               </div>
             </div>

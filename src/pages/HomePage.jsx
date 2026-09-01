@@ -3,6 +3,7 @@ import HeroSection from '../components/home/HeroSection';
 import QuickCareFinder from '../components/home/QuickCareFinder';
 import TrustStrip from '../components/home/TrustStrip';
 import FeaturedDoctors from '../components/home/FeaturedDoctors';
+import EditorialCareSection from '../components/home/EditorialCareSection';
 import SpecialtiesBento from '../components/home/SpecialtiesBento';
 import CentresOfExcellence from '../components/home/CentresOfExcellence';
 import SpecialisedTreatments from '../components/home/SpecialisedTreatments';
@@ -30,29 +31,26 @@ export default function HomePage({
   openSearchModal 
 }) {
   return (
-    <div className="space-y-0">
+    <div className="space-y-0 bg-[#FBF9F5]">
       {/* Sec 01 */} <HeroSection setActivePage={setActivePage} openSearchModal={openSearchModal} />
       {/* Sec 02 */} <QuickCareFinder setActivePage={setActivePage} setSelectedDoctorId={setSelectedDoctorId} />
       {/* Sec 03 */} <TrustStrip />
       {/* Sec 04 */} <FeaturedDoctors setActivePage={setActivePage} setSelectedDoctorId={setSelectedDoctorId} setSelectedDoctorForBooking={setSelectedDoctorForBooking} />
-      {/* Sec 05 */} <SpecialtiesBento setActivePage={setActivePage} />
+      {/* Sec 05 */} <EditorialCareSection setActivePage={setActivePage} />
       {/* Sec 06 */} <CentresOfExcellence setActivePage={setActivePage} />
-      {/* Sec 07 */} <SpecialisedTreatments setActivePage={setActivePage} />
-      {/* Sec 08 */} <InfrastructureTech />
-      {/* Sec 09 */} <PatientJourneyTimeline />
-      {/* Sec 10 */} <PatientServicesGrid setActivePage={setActivePage} />
-      {/* Sec 11 */} <VisitorGuide setActivePage={setActivePage} />
-      {/* Sec 12 */} <InsuranceTPA setActivePage={setActivePage} />
-      {/* Sec 13 */} <HealthCheckups setActivePage={setActivePage} />
-      {/* Sec 14 */} <EmergencySection setActivePage={setActivePage} />
-      {/* Sec 15 */} <PatientStories />
-      {/* Sec 16 */} <FacilitiesGallery setActivePage={setActivePage} />
-      {/* Sec 17 */} <HealthLibrary setActivePage={setActivePage} setSelectedArticleId={setSelectedArticleId} />
-      {/* Sec 18 */} <DoctorReviewedContent />
-      {/* Sec 19 */} <HospitalStoryTimeline />
-      {/* Sec 20 */} <AccreditationsQuality />
-      {/* Sec 21 */} <HospitalLocationMap setActivePage={setActivePage} />
-      {/* Sec 22 */} <FinalCallToAction setActivePage={setActivePage} />
+      {/* Sec 08 */} <SpecialisedTreatments setActivePage={setActivePage} />
+      {/* Sec 09 */} <InfrastructureTech />
+      {/* Sec 10 */} <PatientJourneyTimeline />
+      {/* Sec 11 */} <PatientServicesGrid setActivePage={setActivePage} />
+      {/* Sec 12 */} <VisitorGuide setActivePage={setActivePage} />
+      {/* Sec 13 */} <InsuranceTPA setActivePage={setActivePage} />
+      {/* Sec 15 */} <EmergencySection setActivePage={setActivePage} />
+      {/* Sec 17 */} <FacilitiesGallery setActivePage={setActivePage} />
+      {/* Sec 18 */} <HealthLibrary setActivePage={setActivePage} setSelectedArticleId={setSelectedArticleId} />
+      {/* Sec 19 */} <DoctorReviewedContent />
+      {/* Sec 20 */} <HospitalStoryTimeline />
+      {/* Sec 22 */} <HospitalLocationMap setActivePage={setActivePage} />
+      {/* Sec 23 */} <FinalCallToAction setActivePage={setActivePage} />
     </div>
   );
 }

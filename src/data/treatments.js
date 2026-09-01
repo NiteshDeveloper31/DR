@@ -10,7 +10,7 @@ export const treatmentsData = [
     recoveryDays: "Walks within 4 hours; full normal activity in 2-3 weeks",
     doctorId: "dr-vikramaditya-reddy",
     doctorName: "Dr. Vikramaditya Reddy",
-    image: "https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=800&q=80"
+    image: "/images/treatment_robotic_knee.jpg"
   },
   {
     id: "coronary-angioplasty-stenting",
@@ -23,7 +23,7 @@ export const treatmentsData = [
     recoveryDays: "24-48 hours hospital stay; normal routine in 5 days",
     doctorId: "dr-ananya-deshmukh",
     doctorName: "Dr. Ananya Deshmukh",
-    image: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=800&q=80"
+    image: "/images/treatment_angioplasty.jpg"
   },
   {
     id: "stroke-thrombolysis",
@@ -36,7 +36,7 @@ export const treatmentsData = [
     recoveryDays: "3-5 days acute Neuro-ICU monitoring followed by neuro-rehabilitation",
     doctorId: "dr-priya-nair",
     doctorName: "Dr. Priya Nair",
-    image: "https://images.unsplash.com/photo-1559757175-5700dde675bc?auto=format&fit=crop&w=800&q=80"
+    image: "/images/treatment_stroke_mri.jpg"
   },
   {
     id: "laparoscopic-cholecystectomy",
@@ -49,7 +49,7 @@ export const treatmentsData = [
     recoveryDays: "Daycare or 24-hour hospital stay; back to work in 4-5 days",
     doctorId: "dr-suresh-iyer",
     doctorName: "Dr. Suresh Iyer",
-    image: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=800&q=80"
+    image: "/images/hospital_care_comfort.jpg"
   },
   {
     id: "immunotherapy-cancer-care",
@@ -62,7 +62,7 @@ export const treatmentsData = [
     recoveryDays: "Daycare procedure; zero hair loss",
     doctorId: "dr-amit-shah",
     doctorName: "Dr. Amit Shah",
-    image: "https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=800&q=80"
+    image: "/images/treatment_cancer_care.jpg"
   },
   {
     id: "painless-labor-delivery",
@@ -75,6 +75,6 @@ export const treatmentsData = [
     recoveryDays: "48 hours in luxury post-natal room",
     doctorId: "dr-sunita-kulkarni",
     doctorName: "Dr. Sunita Kulkarni",
-    image: "https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=800&q=80"
+    image: "/images/hospital_care_comfort.jpg"
   }
 ];

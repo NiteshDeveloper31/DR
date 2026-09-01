@@ -1,86 +1,95 @@
 import React from 'react';
-import { CalendarCheck, MapPin, UserCheck, Activity, Heart, Sparkles } from 'lucide-react';
+import { CalendarCheck, Stethoscope, Activity, HeartPulse, CheckCircle2 } from 'lucide-react';
 
 export default function PatientJourneyTimeline() {
   const steps = [
     {
       num: "01",
-      title: "Discover",
-      subtitle: "Find the Right Specialist",
-      desc: "Select specialty or doctor online, pick convenient date & time slot, and receive instant QR appointment voucher.",
+      title: "Discover & Book",
+      subtitle: "Instant OPD Confirmation",
+      desc: "Select specialty or doctor online, pick your preferred date and time slot, and receive immediate SMS/WhatsApp appointment confirmation.",
       icon: CalendarCheck
     },
     {
       num: "02",
-      title: "Consult",
-      subtitle: "Understand Your Options",
-      desc: "Detailed clinical evaluation with senior AIIMS/KEM consultants in private, comfortable consultation suites.",
-      icon: UserCheck
+      title: "Consult & Diagnose",
+      subtitle: "AIIMS & KEM Senior Faculty",
+      desc: "In-depth clinical consultation with senior consultants followed by high-precision 3T MRI, 128-Slice CT, or NABL accredited pathology lab testing.",
+      icon: Stethoscope
     },
     {
       num: "03",
-      title: "Diagnose",
-      subtitle: "Coordinated Diagnostics",
-      desc: "High-precision NABL pathology and 3T MRI diagnostic imaging with digital report delivery straight to your phone.",
+      title: "Precision Care & TPA",
+      subtitle: "100% Cashless Assistance",
+      desc: "Targeted robotic surgical or interventional procedure in NABH accredited suites backed by 24x7 TPA desk for instant insurance approval.",
       icon: Activity
     },
     {
       num: "04",
-      title: "Treat",
-      subtitle: "Targeted Medical/Surgical Care",
-      desc: "Advanced daycare or inpatient medical/surgical procedure at NABH accredited facilities with 100% Cashless TPA.",
-      icon: Heart
-    },
-    {
-      num: "05",
-      title: "Recover",
-      subtitle: "Rehabilitation & Follow-up",
-      desc: "Ongoing tele-consultation follow-up, dietary guidance, and physical rehabilitation tracking.",
-      icon: Sparkles
-    },
-    {
-      num: "06",
-      title: "Prevent",
-      subtitle: "Long-Term Wellness Planning",
-      desc: "Annual health checkup tracking and personalized preventive health management to maintain long-term wellness.",
-      icon: MapPin
+      title: "Recovery & Follow-Up",
+      subtitle: "Holistic Rehabilitation",
+      desc: "Post-discharge rehabilitation tracking, dietary guidance, digital lab report access, and scheduled follow-up tele-consultations.",
+      icon: HeartPulse
     }
   ];
 
   return (
-    <section className="py-20 bg-white border-b border-[#DCECEF]">
+    <section className="py-20 bg-[#FBF9F5] border-b border-[#E8E4DC]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <div className="text-xs font-bold text-[#087F8C] uppercase tracking-wider mb-2">
-            Integrated Patient Experience
+        {/* Section Header */}
+        <div className="text-center max-w-2xl mx-auto mb-14">
+          <div className="text-xs font-bold text-[#087F8C] uppercase tracking-wider mb-2 flex items-center justify-center space-x-1.5">
+            <CheckCircle2 className="w-4 h-4 text-[#087F8C]" />
+            <span>Integrated Patient Care Protocol</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#123238] tracking-tight">
-            Your Healthcare Journey
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#1A3C34] font-serif-editorial tracking-tight">
+            Your Seamless Healthcare Journey
           </h2>
-          <p className="text-sm sm:text-base text-[#587176] mt-2">
-            Designed for complete transparency, minimal waiting, and empathetic guidance at every step
+          <p className="text-sm sm:text-base text-[#33413B] mt-2">
+            Designed for complete clinical transparency, zero waiting anxiety, and compassionate guidance at every step
           </p>
         </div>
 
-        {/* 6 Step Horizontal Process Flow */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6 relative">
+        {/* 4-Step Connected Timeline Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
           {steps.map((s, idx) => {
             const Icon = s.icon;
             return (
-              <div key={idx} className="bg-[#EAF6FA] rounded-2xl p-6 border border-[#DCECEF] hover:border-[#075E68] transition-all flex flex-col justify-between relative group">
+              <div 
+                key={idx} 
+                className="bg-white rounded-3xl p-6 sm:p-7 border border-[#E8E4DC] shadow-card hover:shadow-2xl transition-all duration-300 flex flex-col justify-between relative group hover:-translate-y-1"
+              >
                 
                 <div>
-                  <div className="flex items-center justify-between mb-4">
-                    <span className="text-2xl font-black text-[#075E68]/30 group-hover:text-[#087F8C] transition-colors">{s.num}</span>
-                    <div className="w-9 h-9 rounded-xl bg-white text-[#075E68] flex items-center justify-center shadow-sm">
-                      <Icon className="w-4 h-4" />
+                  {/* Top Step Number & Icon */}
+                  <div className="flex items-center justify-between mb-5">
+                    <span className="text-3xl font-black text-[#1A3C34]/20 group-hover:text-[#087F8C] transition-colors font-serif-editorial">
+                      {s.num}
+                    </span>
+                    <div className="w-11 h-11 rounded-2xl bg-[#EAF6FA] text-[#1A3C34] flex items-center justify-center group-hover:bg-[#1A3C34] group-hover:text-white transition-all shadow-sm">
+                      <Icon className="w-5 h-5 stroke-[2.2]" />
                     </div>
                   </div>
 
-                  <h3 className="text-lg font-bold text-[#123238] mb-0.5">{s.title}</h3>
-                  <div className="text-xs font-semibold text-[#087F8C] mb-3">{s.subtitle}</div>
-                  <p className="text-xs text-[#587176] leading-relaxed">{s.desc}</p>
+                  {/* Title & Subtitle */}
+                  <h3 className="text-lg font-bold text-[#1A3C34] mb-1 group-hover:text-[#087F8C] transition-colors">
+                    {s.title}
+                  </h3>
+                  <div className="text-xs font-bold text-[#087F8C] uppercase tracking-wider mb-3">
+                    {s.subtitle}
+                  </div>
+
+                  {/* Body Copy */}
+                  <p className="text-xs text-[#587176] leading-relaxed">
+                    {s.desc}
+                  </p>
+                </div>
+
+                {/* Bottom Step Indicator Bar */}
+                <div className="mt-6 pt-4 border-t border-[#DCECEF] flex items-center justify-between text-[11px] font-bold text-[#1A3C34]">
+                  <span>Stage 0{idx + 1} of 04</span>
+                  <span className="w-2 h-2 rounded-full bg-[#159A86]"></span>
                 </div>
 
               </div>

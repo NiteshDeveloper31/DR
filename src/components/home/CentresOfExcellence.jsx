@@ -38,17 +38,17 @@ export default function CentresOfExcellence({ setActivePage }) {
   ];
 
   return (
-    <section className="py-20 bg-[#F8FBFC] border-b border-[#DCECEF]">
+    <section className="py-24 bg-[#FBF9F5] border-b border-[#E8E4DC]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div className="text-center max-w-2xl mx-auto mb-12">
-          <div className="text-xs font-bold text-[#087F8C] uppercase tracking-wider mb-2">
+        <div className="text-center max-w-2xl mx-auto mb-14">
+          <div className="text-[10px] font-extrabold text-[#087F8C] uppercase tracking-[0.12em] mb-2">
             Institutional Clinical Programs
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#123238] tracking-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#1A3C34] font-serif-editorial tracking-tight">
             Centres of Excellence
           </h2>
-          <p className="text-sm sm:text-base text-[#587176] mt-2">
+          <p className="text-sm sm:text-base text-[#33413B] mt-2">
             Dedicated institute-level clinical centers offering specialized multi-specialty team care
           </p>
         </div>
@@ -57,34 +57,34 @@ export default function CentresOfExcellence({ setActivePage }) {
           {institutes.map((inst, idx) => {
             const Icon = inst.icon;
             return (
-              <div key={idx} className="bg-white rounded-3xl p-8 border border-[#DCECEF] shadow-card hover:shadow-xl transition-all flex flex-col justify-between group">
+              <div key={idx} className="bg-white rounded-3xl p-8 border border-[#E8E4DC]/70 shadow-[0_10px_30px_rgba(0,0,0,0.03)] hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1">
                 <div>
                   <div className="flex items-center justify-between mb-6">
-                    <div className="w-12 h-12 rounded-2xl bg-[#EAF6FA] text-[#075E68] flex items-center justify-center group-hover:bg-[#075E68] group-hover:text-white transition-colors">
-                      <Icon className="w-6 h-6" />
+                    <div className="w-12 h-12 rounded-2xl bg-[#EAF6FA] text-[#1A3C34] flex items-center justify-center group-hover:bg-[#1A3C34] group-hover:text-white transition-all shadow-sm">
+                      <Icon className="w-6 h-6 stroke-[2]" />
                     </div>
-                    <span className="px-3 py-1 rounded-full bg-[#EAF6FA] border border-[#DCECEF] text-xs font-bold text-[#075E68]">
+                    <span className="px-3.5 py-1 rounded-full bg-[#EAF6FA] border border-[#DCECEF] text-xs font-extrabold text-[#1A3C34]">
                       {inst.beds}
                     </span>
                   </div>
 
-                  <h3 className="text-2xl font-bold text-[#123238] mb-1 group-hover:text-[#075E68] transition-colors">
+                  <h3 className="text-2xl font-extrabold text-[#1A3C34] font-serif-editorial mb-1 group-hover:text-[#087F8C] transition-colors">
                     {inst.title}
                   </h3>
-                  <div className="text-xs font-semibold text-[#087F8C] mb-3">{inst.subtitle}</div>
-                  <p className="text-sm text-[#587176] leading-relaxed mb-6">{inst.desc}</p>
+                  <div className="text-xs font-bold text-[#087F8C] uppercase tracking-wider mb-3">{inst.subtitle}</div>
+                  <p className="text-sm text-[#587176] leading-relaxed mb-6 font-medium">{inst.desc}</p>
                 </div>
 
-                <div className="pt-4 border-t border-[#DCECEF] flex items-center justify-between">
+                <div className="pt-4 border-t border-[#E8E4DC] flex items-center justify-between">
                   <div className="text-xs text-[#587176]">
-                    Lead Clinician: <span className="font-bold text-[#123238]">{inst.leadDoctor}</span>
+                    Lead Clinician: <span className="font-extrabold text-[#1A3C34]">{inst.leadDoctor}</span>
                   </div>
                   <button 
                     onClick={() => {
                       setActivePage('specialties');
                       window.scrollTo({ top: 0, behavior: 'smooth' });
                     }}
-                    className="text-xs font-bold text-[#075E68] hover:text-[#087F8C] flex items-center space-x-1"
+                    className="text-xs font-extrabold text-[#1A3C34] hover:text-[#087F8C] flex items-center space-x-1 transition-colors"
                   >
                     <span>View Program</span>
                     <ArrowRight className="w-3.5 h-3.5" />

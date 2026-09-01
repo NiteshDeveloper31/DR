@@ -14,22 +14,22 @@ export default function PatientServicesGrid({ setActivePage }) {
   ];
 
   return (
-    <section className="py-20 bg-[#F8FBFC] border-b border-[#DCECEF]">
+    <section className="py-24 bg-[#FBF9F5] border-b border-[#E8E4DC]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div className="text-center max-w-2xl mx-auto mb-12">
-          <div className="text-xs font-bold text-[#087F8C] uppercase tracking-wider mb-2">
+        <div className="text-center max-w-2xl mx-auto mb-16">
+          <div className="text-[10px] font-extrabold text-[#087F8C] uppercase tracking-[0.12em] mb-2">
             Complete Healthcare Ecosystem
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#123238] tracking-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#1A3C34] font-serif-editorial tracking-tight">
             Comprehensive Patient Services
           </h2>
-          <p className="text-sm sm:text-base text-[#587176] mt-2">
+          <p className="text-sm sm:text-base text-[#33413B] mt-2 leading-relaxed">
             Integrated outpatient, inpatient, diagnostic, and emergency clinical services under one roof
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {services.map((srv, idx) => {
             const Icon = srv.icon;
             return (
@@ -39,18 +39,18 @@ export default function PatientServicesGrid({ setActivePage }) {
                   setActivePage('patient-care');
                   window.scrollTo({ top: 0, behavior: 'smooth' });
                 }}
-                className="bg-white rounded-2xl p-6 border border-[#DCECEF] shadow-card hover:shadow-xl transition-all cursor-pointer group flex flex-col justify-between"
+                className="bg-white rounded-3xl p-7 border border-[#E8E4DC]/70 shadow-[0_10px_30px_rgba(0,0,0,0.03)] hover:shadow-2xl transition-all duration-300 cursor-pointer group flex flex-col justify-between hover:-translate-y-1"
               >
                 <div>
-                  <div className="w-12 h-12 rounded-2xl bg-[#EAF6FA] text-[#075E68] flex items-center justify-center mb-4 group-hover:bg-[#075E68] group-hover:text-white transition-colors">
-                    <Icon className="w-6 h-6" />
+                  <div className="w-12 h-12 rounded-2xl bg-[#EAF6FA] text-[#1A3C34] flex items-center justify-center mb-5 group-hover:bg-[#1A3C34] group-hover:text-white transition-all shadow-sm">
+                    <Icon className="w-6 h-6 stroke-[2]" />
                   </div>
-                  <h3 className="text-lg font-bold text-[#123238] group-hover:text-[#075E68] transition-colors mb-2">
+                  <h3 className="text-lg font-extrabold text-[#1A3C34] font-serif-editorial group-hover:text-[#087F8C] transition-colors mb-2 leading-snug">
                     {srv.title}
                   </h3>
-                  <p className="text-xs text-[#587176] leading-relaxed">{srv.desc}</p>
+                  <p className="text-xs text-[#587176] leading-relaxed font-medium">{srv.desc}</p>
                 </div>
-                <div className="pt-4 border-t border-[#DCECEF] mt-4 flex items-center text-xs font-bold text-[#075E68] group-hover:text-[#087F8C]">
+                <div className="pt-4 border-t border-[#E8E4DC] mt-5 flex items-center text-xs font-extrabold text-[#1A3C34] group-hover:text-[#087F8C]">
                   <span>Learn Details</span>
                   <ArrowRight className="w-3.5 h-3.5 ml-1 group-hover:translate-x-1 transition-transform" />
                 </div>
